@@ -69,17 +69,7 @@ export default {
   name: 'ContextOfUseForm',
   props: [
     'contextOfUse'
-  ],
-  data() {
-    return {
-    }
-  },
-  mounted() {
-  },
-  methods: {
-  },
-  computed: {
-  }
+  ]
 }
 </script>
 

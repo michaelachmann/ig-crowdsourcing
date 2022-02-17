@@ -5,6 +5,7 @@
                     <div class="flex flex-row sm:flex-wrap">
                         <ContextOfUseForm :contextOfUse="contextOfUse" />
                         <TranscriptionForm :transcription="transcription" />
+                        {{ transcription }}
                     </div>
             </div>
         <div class="flex mt-2 justify-between flex-row-reverse">
@@ -37,7 +38,7 @@ export default {
   },
   data() {
       return {
-
+    transcription: '',
     codes: {
           portrait: {
               selfie: false,
@@ -84,8 +85,7 @@ export default {
           aphorism: false,
           other: ''
       },
-      transcription: ''
-      }
+    }
   },
   props: {
     chromeUserId: String,
@@ -116,6 +116,9 @@ export default {
   watch: {
       story() {
           this.clearForms()
+      },
+      transcription() {
+          console.log(this.transcription)
       }
   },
   methods: {

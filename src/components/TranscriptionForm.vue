@@ -7,6 +7,8 @@
     </div>
       <div class="text-base mt-4 h-full w-full">
         <textarea v-model="transcription" class="p-1 resize-none w-full h-full border rounded"></textarea>
+        <textarea v-model="transcription" placeholder="add multiple lines"></textarea>
+
       </div>
       <div>
 
@@ -22,17 +24,7 @@ export default {
   name: 'TranscriptionForm',
   props: [
     'transcription'
-  ],
-  data() {
-    return {
-    }
-  },
-  mounted() {
-  },
-  methods: {
-  },
-  computed: {
-  }
+  ]
 }
 </script>
 
