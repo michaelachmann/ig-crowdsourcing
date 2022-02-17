@@ -2,13 +2,13 @@
   <div class="flex flex-col">
     <div class="">
         <h3 class="text-2xl font-bold">1. Inhaltskodierung</h3>
-        <p class="text-base">Sehen Sie sich die links dargestellte Story an und wählen Sie alle passenden Codes aus.</p>
+        <p class="text-base">Sieh dir die Story links an und wählen für alle Dinge, die in der Story dargestellt sind, die passenden Codes aus.</p>
         <hr />
     </div>
       <div class="flex flex-wrap text-base">
     <div class="m-4">
 
-                <h4 class="text-xl font-semibold text-slate-800">Portrait</h4>
+                <h4 class="text-xl font-semibold text-slate-800">Porträt</h4>
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.portrait.selfie" id="code-selfie">
                 <label for="code-selfie">
@@ -19,21 +19,21 @@
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.portrait.friend" id="code-friend">
                 <label for="code-friend">
-                    Friend
+                    Freunde
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.portrait.family" id="code-family">
                 <label for="code-family">
-                    Family
+                    Familie
                 </label>
                 </div>
 
         </div>
     <div class="m-4">
         
-                <h4 class="text-xl font-semibold text-slate-800">Composition</h4>
+                <h4 class="text-xl font-semibold text-slate-800">Collage</h4>
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.composition.text" id="code-text">
                 <label for="code-text">
@@ -44,7 +44,7 @@
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.composition.images" id="code-images">
                 <label for="code-images">
-                    Images
+                    Bilder
                 </label>
                 </div>
 
@@ -65,73 +65,73 @@
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.composition.drawings" id="code-drawings">
                 <label for="code-drawings">
-                    Drawings
+                    Zeichnungen
                 </label>
                 </div>
 
         </div>
     <div class="m-4">
 
-            <h4 class="text-xl font-semibold text-slate-800">Materiality</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Materialität</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.materiality.objects" id="code-objects">
                 <label for="code-objects">
-                    Objects
+                    Objekte
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.materiality.bodies" id="code-bodies">
                 <label for="code-bodies">
-                    Bodies
+                    Körper
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.materiality.car" id="code-car">
                 <label for="code-car">
-                    Car
+                    Autos
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.materiality.books" id="code-books">
                 <label for="code-objects">
-                    books
+                    B&uuml;cher
                 </label>
                 </div>
         </div>
 
     <div class="m-4">
 
-            <h4 class="text-xl font-semibold text-slate-800">Setting</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Umgebung</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.setting.city" id="code-city">
                 <label for="code-objects">
-                    City
+                    Stadt / Urban
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.setting.nature" id="code-nature">
                 <label for="code-bodies">
-                    Nature
+                    Natur
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.setting.travel" id="code-travel">
                 <label for="code-travel">
-                    Travel
+                    Reisen
                 </label>
                 </div>
         </div>
 
     <div class="m-4">
 
-            <h4 class="text-xl font-semibold text-slate-800">Celebration</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Feiern</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.celebration.party" id="code-party">
@@ -143,7 +143,7 @@
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.celebration.special" id="code-special">
                 <label for="code-special">
-                    Special Occasion
+                    Besondere Anlässe
                 </label>
                 </div>
 
@@ -151,19 +151,19 @@
 
     <div class="m-4">
 
-            <h4 class="text-xl font-semibold text-slate-800">Food &amp; Beverage</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Essen &amp; Trinken</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.food.food" id="code-food">
                 <label for="code-food">
-                    Food
+                    Essen
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.food.drink" id="code-drink">
                 <label for="code-drink">
-                    Drink
+                    Drinken
                 </label>
                 </div>
 
@@ -171,17 +171,17 @@
 
     <div class="m-4">
 
-            <h4 class="text-xl font-semibold text-slate-800">Other</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Sonstiges</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.other.animals" id="code-animals">
                 <label for="code-animals">
-                    Animals
+                    Tiere
                 </label>
                 </div>
 
                 <div class="form-check">
-                <input type="text" class="border" v-model="codes.other.open" id="code-open" placeholder="Other: Enter your suggestions!">
+                <input type="text" class="border" v-model="codes.other.open" id="code-open" placeholder="Sonstiges, gib deine Vorschläge an!">
                 </div>
 
         </div>

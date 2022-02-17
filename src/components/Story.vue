@@ -4,18 +4,16 @@
                     <CodingForm :codes="codes" />
                     <div class="flex flex-row sm:flex-wrap">
                         <ContextOfUseForm :contextOfUse="contextOfUse" />
-                        <TranscriptionForm :transcription="transcription" />
-                        {{ transcription }}
+                        <UserGroupForm :userGroup="userGroup" />
+                        <!--<TranscriptionForm :transcription="transcription" />-->
                     </div>
             </div>
         <div class="flex mt-2 justify-between flex-row-reverse">
             <div class="">
-              <button class="bottom-0 right-0 px-4 py-1 text-2xl text-white bg-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white 
-              hover:bg-purple-900 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" @click="saveData()">Save Data</button>
+              <button class="block w-1/2 px-3 py-2 mx-1 rounded text-center text-xl bg-blue-500 font-medium text-white leading-5 hover:bg-blue-600 md:mx-2 md:w-auto" @click="saveData()">Eingaben Speichern</button>
             </div>
             <div class="">
-              <button :disabled="noStoriesLeft" class="bottom-0 right-0 px-4 py-1 text-2xl text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white 
-              hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" @click="$emit('getNextStory')">Skip Story</button>
+              <button :disabled="noStoriesLeft" class="block w-1/2 px-3 py-2 mx-1 rounded text-center text-xl bg-gray-500 font-medium text-white leading-5 hover:bg-blue-600 md:mx-2 md:w-auto" @click="$emit('getNextStory')">Story &Uuml;berspringen</button>
             </div>
           </div>
       </div>
@@ -25,7 +23,8 @@
 import moment from 'moment';
 import CodingForm from './CodingForm.vue'
 import ContextOfUseForm from './ContextOfUseForm.vue'
-import TranscriptionForm from './TranscriptionForm.vue'
+//import TranscriptionForm from './TranscriptionForm.vue'
+import UserGroupForm from './UserGroupForm.vue'
 
 moment.locale('de');
 
@@ -34,11 +33,12 @@ export default {
   components: {
       CodingForm,
       ContextOfUseForm,
-      TranscriptionForm,
+      UserGroupForm,
   },
   data() {
       return {
     transcription: '',
+    userGroup: '',
     codes: {
           portrait: {
               selfie: false,
@@ -123,6 +123,7 @@ export default {
   },
   methods: {
       clearForms(){
+        this.transcription = ""
         this.codes.portrait.selfie = false
         this.codes.portrait.friend = false
         this.codes.portrait.family = false
@@ -144,14 +145,14 @@ export default {
         this.codes.food.drink = false
         this.codes.other.animal = false
         this.codes.other.open= ''
-        this.contextOfUse.special_event = false,
-        this.contextOfUse.daily_life = false,
-        this.contextOfUse.mood = false,
-        this.contextOfUse.interaction = false,
-        this.contextOfUse.self_display = false,
-        this.contextOfUse.aphorism = false,
+        this.contextOfUse.special_event = false
+        this.contextOfUse.daily_life = false
+        this.contextOfUse.mood = false
+        this.contextOfUse.interaction = false
+        this.contextOfUse.self_display = false
+        this.contextOfUse.aphorism = false
         this.contextOfUse.other = ''
-        this.transcription = ''
+        this.userGroup = ''
       },
       saveData(){
         // Saving Codes 
@@ -162,6 +163,12 @@ export default {
 
         // Saving Transcription
         this.sendTranscription(this.transcription)
+
+        // Saving Transcription
+        this.sendUserGroup(this.userGroup)
+
+        // Send Metadata
+        this.sendMetadata(this.story)
 
         // Saving Metadata
         this.clearForms() 
@@ -174,8 +181,6 @@ export default {
         let payload = {
 					codes: JSON.stringify(codes),
                     pk: this.story['id'],
-					taken_at_timestamp:  this.story['taken_at_timestamp'],
-					expiring_at_timestamp: this.story['expiring_at_timestamp'],
                     created_at: Date.now(),
                     annotator_id: this.chromeUserId
 				  }
@@ -186,8 +191,6 @@ export default {
         let payload = {
 					codes: JSON.stringify(codes),
                     pk: this.story['id'],
-					taken_at_timestamp:  this.story['taken_at_timestamp'],
-					expiring_at_timestamp: this.story['expiring_at_timestamp'],
                     created_at: Date.now(),
                     annotator_id: this.chromeUserId
 				  }
@@ -198,6 +201,44 @@ export default {
         let payload = {
 					transcription: transcription,
                     pk: this.story['id'],
+                    created_at: Date.now(),
+                    annotator_id: this.chromeUserId
+				  }
+        this.$emit('api', collection, payload)     
+      },
+      sendUserGroup(userGroup) {
+        let collection = '620e6a9c6eaf0b45fd76'
+        let payload = {
+					user_group: userGroup,
+                    pk: this.story['id'],
+                    created_at: Date.now(),
+                    annotator_id: this.chromeUserId
+				  }
+        this.$emit('api', collection, payload)     
+      },
+      sendMetadata(story){
+          let collection = '61f91407e6be2fb18ab1'
+
+          let tappable_objects = ""
+          if("tappable_objects" in story){
+              tappable_objects = JSON.stringify(story['tappable_objects'])
+          }
+
+          let media_overlay_info = ""
+          if("media_overlay_info" in story){
+              media_overlay_info = JSON.stringify(story['media_overlay_info'])
+          }
+
+          let payload = {
+					owner_id: story['owner']['id'],
+                	owner_username: story['owner']['username'],
+					tappable_objects: tappable_objects,
+                    media_overlay_info: media_overlay_info,
+                    typename: story['__typename'],
+					taken_at_timestamp:  story['taken_at_timestamp'],
+					expiring_at_timestamp: story['expiring_at_timestamp'],
+                    fact_check_information: story['fact_check_information'],
+                    pk: story['id'],
                     created_at: Date.now(),
                     annotator_id: this.chromeUserId
 				  }

@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col m-4">
     <div class="">
-        <h3 class="text-2xl font-bold">2. Context-Of-Use</h3>
-        <p class="text-base">Sehen Sie sich die links dargestellte Story an und wählen Sie alle passenden contextOfUse aus.</p>
+        <h3 class="text-2xl font-bold">2. Kontext</h3>
+        <p class="text-base">Welche der folgenden Kontexte findest du beschreibt die Story passend?</p>
         <hr />
     </div>
       <div class="flex flex-wrap text-base">
@@ -11,47 +11,47 @@
                 <div class="form-check">
                 <input type="checkbox" v-model="contextOfUse.special_event" id="code-special-event">
                 <label for="code-special-event">
-                    Special Event
+                    Besonderer Anlass
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="contextOfUse.daily_life" id="code-daily-life">
                 <label for="code-daily-life">
-                    Daily Life
+                    Tägliches Leben
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="contextOfUse.mood" id="code-mood">
                 <label for="code-mood">
-                    Mood
+                    Laune (Mood)
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="contextOfUse.interaction" id="code-interaction">
                 <label for="code-interaction">
-                    Interaction
+                    Interaktion
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="contextOfUse.self_display" id="code-self-display">
                 <label for="code-self-display">
-                    Self Display
+                    Selbstdarstellung
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="contextOfUse.aphorism" id="code-aphorism">
                 <label for="code-aphorism">
-                    Aphorism
+                    Aphorismen (Gedanke, Urteil, Lebensweisheit)
                 </label>
                 </div>
 
                 <div class="form-check">
-                <input type="input" v-model="contextOfUse.other" id="code-other" class="border" placeholder="Other: Enter your suggestion">
+                <input type="input" v-model="contextOfUse.other" id="code-other" class="border" placeholder="Sonstiges: Gib deinen Vorschlag an!">
                 </div>
 
         </div>

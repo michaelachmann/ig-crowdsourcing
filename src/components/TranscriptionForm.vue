@@ -1,14 +1,12 @@
 <template>
   <div class="flex flex-col h-full m-4 mr-0">
     <div class="">
-        <h3 class="text-2xl font-bold">3. Transcription</h3>
-        <p class="text-base">Sehen Sie sich die links dargestellte Story an und wählen Sie alle passenden Codes aus.</p>
+        <h3 class="text-2xl font-bold">4. Transkription</h3>
+        <p class="text-base">Wurden in die Story Texte eingebaut? Tippen Sie die Inhalte im unteren Feld ab! Du kannst dabei pro Texteinheit eine neue Zeile beginnen.</p>
         <hr />
     </div>
       <div class="text-base mt-4 h-full w-full">
         <textarea v-model="transcription" class="p-1 resize-none w-full h-full border rounded"></textarea>
-        <textarea v-model="transcription" placeholder="add multiple lines"></textarea>
-
       </div>
       <div>
 
@@ -22,9 +20,9 @@
 
 export default {
   name: 'TranscriptionForm',
-  props: [
-    'transcription'
-  ]
+  props: {
+    'transcription': String
+  }
 }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="h-8 flex items-center text-white p-2 justify-between bg-black">
+    <div class="h-8 flex items-center text-black p-2 justify-between bg-gray-300">
       <div class="flex h-5 items-center gap-1">
-        <span class="font-bold select-none">Instagram Annotator</span>
+        <span class="font-bold select-none">Kodieren &amp; Transkribieren</span>
       </div>
     </div>
 
@@ -11,7 +11,7 @@
     </div>
     <div v-if="noStoriesLeft" class="w-full h-5/6 flex flex-col bg-white items-center">
       <div class="text-2xl"> 
-        No Stories Left! Please Check back later and reload the page.
+        Du hast bereits alle Stories kodiert, komme bald zurück und lade die Seite neu!
       </div>
     </div>
     <div v-if="!requestRunning" v-show="!noStoriesLeft" class="h-5/6 p-1 w-full flex bg-white">
@@ -77,7 +77,7 @@ export default {
 
     chrome.storage.sync.get('annotatedIDs', function(result) {
         this.annotatedIDs = result.annotatedIDs
-        this.annotatedIDs = {}
+        //this.annotatedIDs = {}
         console.log('Value currently is ' + JSON.stringify(result.annotatedIDs));
       }.bind(this));
 
@@ -93,9 +93,9 @@ export default {
     finishedAnnotation(id){      
       let l = Object.keys(this.annotatedIDs).length
       this.annotatedIDs[l] = id
-      chrome.storage.sync.set({annotatedIDs: this.annotatedIDs});
-      console.log(this.annotatedIDs)
-      this.getNextStory()
+      chrome.storage.sync.set({annotatedIDs: this.annotatedIDs}, function() {
+        this.getNextStory()
+      }.bind(this));
     },
     // Increases the pointeres in order to get the next story.
     getNextStory(){
