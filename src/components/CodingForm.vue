@@ -1,8 +1,14 @@
 <template>
-  <div class="">
-    <div>
+  <div class="flex flex-col">
+    <div class="">
+        <h3 class="text-2xl font-bold">1. Inhaltskodierung</h3>
+        <p class="text-base">Sehen Sie sich die links dargestellte Story an und wählen Sie alle passenden Codes aus.</p>
+        <hr />
+    </div>
+      <div class="flex flex-wrap text-base">
+    <div class="m-4">
 
-                <h4>Portrait</h4>
+                <h4 class="text-xl font-semibold text-slate-800">Portrait</h4>
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.portrait.selfie" id="code-selfie">
                 <label for="code-selfie">
@@ -25,9 +31,9 @@
                 </div>
 
         </div>
-        <div>
+    <div class="m-4">
         
-                <h4>Composition</h4>
+                <h4 class="text-xl font-semibold text-slate-800">Composition</h4>
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.composition.text" id="code-text">
                 <label for="code-text">
@@ -64,9 +70,9 @@
                 </div>
 
         </div>
-        <div>
+    <div class="m-4">
 
-            <h4>Materiality</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Materiality</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.materiality.objects" id="code-objects">
@@ -97,9 +103,9 @@
                 </div>
         </div>
 
-        <div>
+    <div class="m-4">
 
-            <h4>Setting</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Setting</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.setting.city" id="code-city">
@@ -123,9 +129,9 @@
                 </div>
         </div>
 
-        <div>
+    <div class="m-4">
 
-            <h4>Celebration</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Celebration</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.celebration.party" id="code-party">
@@ -143,9 +149,9 @@
 
         </div>
 
-        <div>
+    <div class="m-4">
 
-            <h4>Food &amp; Beverage</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Food &amp; Beverage</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.food.food" id="code-food">
@@ -163,9 +169,9 @@
 
         </div>
 
-        <div>
+    <div class="m-4">
 
-            <h4>Other</h4>
+            <h4 class="text-xl font-semibold text-slate-800">Other</h4>
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.other.animals" id="code-animals">
@@ -175,16 +181,13 @@
                 </div>
 
                 <div class="form-check">
-                <input type="text" v-model="codes.other.open" id="code-open">
-                <label for="code-open">
-                    Open
-                </label>
+                <input type="text" class="border" v-model="codes.other.open" id="code-open" placeholder="Other: Enter your suggestions!">
                 </div>
 
         </div>
-
-<button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white 
-        hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" @click="next()"> Next</button>
+      </div>
+      <div>
+      </div>
 
   </div>
 
@@ -196,55 +199,15 @@
 export default {
   name: 'CodingForm',
   props: [
-    'story'
+    'codes'
   ],
   data() {
     return {
-      codes: {
-          portrait: {
-              selfie: false,
-              friend: false,
-              family: false
-          },
-          composition: {
-              text: false,
-              images: false,
-              stickers: false,
-              memes: false,
-              drawings: false
-          },
-          materiality: {
-              objects: false,
-              bodies: false,
-              car: false,
-              books: false
-          }, 
-          setting: {
-              city: false,
-              nature: false,
-              travel: false
-          },
-          celebration: {
-              party: false,
-              special: false
-          },
-          food: {
-              food: false,
-              drink: false,
-          },
-          other: {
-              animal: false,
-              open: ''
-          }
-      }
     }
   },
   mounted() {
   },
   methods: {
-      next(){
-        this.$emit('next', JSON.stringify(this.codes))
-      },
   },
   computed: {
   }

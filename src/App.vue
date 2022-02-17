@@ -1,8 +1,9 @@
 <template>
-  <div id="app" class="min-h-full bg-gray-50 py-6 flex flex-col "> 
+  <div id="app" class="h-screen "> 
 
-    <Annotator :chromeUserId="chromeUserId" class="justify-center relative overflow-hidden" />
-
+    <div class="flex justify-center py-10 items-center bg-gray-200">
+    <Annotator :chromeUserId="chromeUserId" class="w-5/6 rounded-xl shadow-lg overflow-hidden text-xs" />
+    </div>
   </div>
 </template>
 

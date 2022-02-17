@@ -1,18 +1,40 @@
 <template>
   <div>
-    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-6xl place-content-center justify-center align-middle">
-      <div class="md:flex">
-        <div class="basis-1/3">
-          <img class="w-full object-cover md:h-full md:w-80" :src="currentImage" alt="Man looking at item at a store">
-        </div>
-        <div class="p-4 space-y-4 container basis-2/3">
-              <Story v-on:api="postToApi" v-if="!requestRunning" :story="currentStory" v-on:finishedAnnotation="finishedAnnotation" :chromeUserId="chromeUserId"/>
-
-        <button :disabled="noStoriesLeft" class="bottom-0 right-0 px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white 
-        hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" @click="getNextStory()">Get Next Story</button>
-
-        </div>
+    <div class="h-8 flex items-center text-white p-2 justify-between bg-black">
+      <div class="flex h-5 items-center gap-1">
+        <span class="font-bold select-none">Instagram Annotator</span>
       </div>
+    </div>
+
+    <div v-show="requestRunning" class="w-full h-5/6 flex flex-col bg-white items-center">
+      <span class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status"></span>
+    </div>
+    <div v-if="noStoriesLeft" class="w-full h-5/6 flex flex-col bg-white items-center">
+      <div class="text-2xl"> 
+        No Stories Left! Please Check back later and reload the page.
+      </div>
+    </div>
+    <div v-if="!requestRunning" v-show="!noStoriesLeft" class="h-5/6 p-1 w-full flex bg-white">
+
+        <div class="w-1/3 h-auto flex flex-col items-center">
+          <div class="py-1">
+            <StoryMetadata v-if="!requestRunning" :story="currentStory" />
+          </div>
+
+          <div class="flex">
+            <div class="py-2">
+                  <img class="w-auto h-auto rounded" :src="currentImage" alt="Current Story for annotation">
+            </div>
+          </div>
+
+        </div>
+
+        
+        <div class="w-5/6 h-auto flex flex-col px-4 py-2">
+        
+          <Story v-on:api="postToApi" v-if="!requestRunning" :story="currentStory" :noStoriesLeft="noStoriesLeft" v-on:finishedAnnotation="finishedAnnotation" v-on:getNextStory="getNextStory" :chromeUserId="chromeUserId"/>
+      
+        </div>
     </div>
   </div>
 
@@ -21,12 +43,14 @@
 
 <script>
 import Story from './Story.vue'
+import StoryMetadata from './StoryMetadata.vue'
 var Vibrant = require('node-vibrant')
 
 export default {
   name: 'Annotator',
   components: {
     Story,
+    StoryMetadata,
   },
   props: {
     chromeUserId: String,
@@ -53,6 +77,7 @@ export default {
 
     chrome.storage.sync.get('annotatedIDs', function(result) {
         this.annotatedIDs = result.annotatedIDs
+        this.annotatedIDs = {}
         console.log('Value currently is ' + JSON.stringify(result.annotatedIDs));
       }.bind(this));
 
@@ -61,6 +86,10 @@ export default {
 
   },
   methods: {
+    // Triggered once the user completes & confirms the coding
+    // of a story. The id will be saved to an object, which will
+    // be stored in chrome storage. TODO: This method might be 
+    // problematic once a user coded a large amount of stories.
     finishedAnnotation(id){      
       let l = Object.keys(this.annotatedIDs).length
       this.annotatedIDs[l] = id
@@ -90,6 +119,7 @@ export default {
           this.getUserStories(this.userIds[this.currentUserPointer])
         } else {
           this.noStoriesLeft = true
+          this.requestRunning = false
         }
       }
 
@@ -153,6 +183,7 @@ export default {
     },
     postToApi(collection, payload){
       this.getTab(() => {
+        console.log(payload)
         chrome.tabs.sendMessage(this.tab.id, {type: 'appwrite.createDocument', payload, collection}, function(response) {}.bind(this)) 
       })
     }

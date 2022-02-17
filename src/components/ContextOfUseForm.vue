@@ -1,62 +1,63 @@
 <template>
-  <div class="">
-    <div>
+  <div class="flex flex-col m-4">
+    <div class="">
+        <h3 class="text-2xl font-bold">2. Context-Of-Use</h3>
+        <p class="text-base">Sehen Sie sich die links dargestellte Story an und wählen Sie alle passenden contextOfUse aus.</p>
+        <hr />
+    </div>
+      <div class="flex flex-wrap text-base">
+    <div class="m-4">
 
-                <h4>Context of Use</h4>
                 <div class="form-check">
-                <input type="checkbox" v-model="codes.special_event" id="code-special-event">
+                <input type="checkbox" v-model="contextOfUse.special_event" id="code-special-event">
                 <label for="code-special-event">
                     Special Event
                 </label>
                 </div>
 
                 <div class="form-check">
-                <input type="checkbox" v-model="codes.daily_life" id="code-daily-life">
+                <input type="checkbox" v-model="contextOfUse.daily_life" id="code-daily-life">
                 <label for="code-daily-life">
                     Daily Life
                 </label>
                 </div>
 
                 <div class="form-check">
-                <input type="checkbox" v-model="codes.mood" id="code-mood">
+                <input type="checkbox" v-model="contextOfUse.mood" id="code-mood">
                 <label for="code-mood">
                     Mood
                 </label>
                 </div>
 
                 <div class="form-check">
-                <input type="checkbox" v-model="codes.interaction" id="code-interaction">
+                <input type="checkbox" v-model="contextOfUse.interaction" id="code-interaction">
                 <label for="code-interaction">
                     Interaction
                 </label>
                 </div>
 
                 <div class="form-check">
-                <input type="checkbox" v-model="codes.self_display" id="code-self-display">
+                <input type="checkbox" v-model="contextOfUse.self_display" id="code-self-display">
                 <label for="code-self-display">
                     Self Display
                 </label>
                 </div>
 
                 <div class="form-check">
-                <input type="checkbox" v-model="codes.aphorism" id="code-aphorism">
+                <input type="checkbox" v-model="contextOfUse.aphorism" id="code-aphorism">
                 <label for="code-aphorism">
                     Aphorism
                 </label>
                 </div>
 
                 <div class="form-check">
-                <input type="input" v-model="codes.other" id="code-other">
-                <label for="code-other">
-                    Other
-                </label>
+                <input type="input" v-model="contextOfUse.other" id="code-other" class="border" placeholder="Other: Enter your suggestion">
                 </div>
 
         </div>
-
-<button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white 
-        hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" @click="next()"> Next</button>
-
+      </div>
+      <div>
+      </div>
   </div>
 
 
@@ -67,34 +68,15 @@
 export default {
   name: 'ContextOfUseForm',
   props: [
-    'story'
+    'contextOfUse'
   ],
   data() {
     return {
-      codes: {
-          special_event: false,
-          daily_life: false,
-          mood: false,
-          interaction: false,
-          self_display: false,
-          aphorism: false,
-          other: ''
-      }
     }
   },
   mounted() {
   },
   methods: {
-      next(){
-        this.$emit('next', JSON.stringify(this.codes))
-        this.codes.special_event = false,
-        this.codes.daily_life = false,
-        this.codes.mood = false,
-        this.codes.interaction = false,
-        this.codes.self_display = false,
-        this.codes.aphorism = false,
-        this.codes.other = ''
-      },
   },
   computed: {
   }
