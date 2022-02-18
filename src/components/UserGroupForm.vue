@@ -34,6 +34,8 @@
                 <input type="radio" id="none" value="None" v-model="modelValue"  @input="$emit('update:modelValue', $event.target.value)"> 
                 <label class="pl-1" for="none">Keine</label>
                 </div>
+        <p class="text-sm">Die Angabe wird für alle Stories des aktuellen Accounts beibehalten.</p>
+
 
         </div>
       </div>

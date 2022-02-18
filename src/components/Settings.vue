@@ -6,9 +6,9 @@
       </div>
     </div>
 
-    <div class="h-5/6 p-1 w-full items-center flex bg-white text-base">
+    <div class="h-5/6 p-1 w-full flex bg-white text-base">
         
-        <div class="w-full h-full items-center flex justify-between flex-col px-4 pt-2 pb-10 space-y-2">
+        <div class="w-full h-full flex flex-col px-4 pt-2 pb-10 space-y-2">
         
         <div class="">
           <div class="text-xl font-semibold">Willkommen bei der IG-Story Crowdsourcing Plattform!</div>

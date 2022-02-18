@@ -77,7 +77,11 @@ export default {
     this.getUserIds()
 
     chrome.storage.sync.get('annotatedIDs', function(result) {
-        this.annotatedIDs = result.annotatedIDs
+        if(result.annotatedIDs){
+          this.annotatedIDs = result.annotatedIDs
+        } else {
+          this.annotatedIDs = {}
+        }
       }.bind(this));
 
     //Vibrant.from('https://placekitten.com/200/287').getPalette()

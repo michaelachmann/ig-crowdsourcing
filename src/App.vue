@@ -54,11 +54,12 @@ export default {
     }.bind(this));
 
     chrome.storage.local.get(['userId'], function(result) {
-      if(result.userId){
+      if(result.userId || result.userId === ""){
         this.chromeUserId = result.userId
       } else {
-        this.userId = uuidv4()
-        chrome.storage.local.set({userId: this.chromeUserId}, function() {
+        let userId = uuidv4()
+        chrome.storage.local.set({userId: userId}, function() {
+          this.chromeUserId = userId
             }.bind(this));
       }
     }.bind(this));

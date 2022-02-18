@@ -194,7 +194,7 @@ export default {
                     created_at: Date.now(),
                     annotator_id: this.chromeUserId
 				  }
-        this.$emit('api', collection, payload)
+        this.$emit('api', collection, payload, () => { return true })
       },
       sendContextOfUse(codes) {
         let collection = '620bb011e069517ba0df'
@@ -204,7 +204,7 @@ export default {
                     created_at: Date.now(),
                     annotator_id: this.chromeUserId
 				  }
-        this.$emit('api', collection, payload)        
+        this.$emit('api', collection, payload, () => { return true })       
       },
       sendTranscription(transcription) {
         let collection = '620e434ab099143dce00'
@@ -214,7 +214,7 @@ export default {
                     created_at: Date.now(),
                     annotator_id: this.chromeUserId
 				  }
-        this.$emit('api', collection, payload)     
+        this.$emit('api', collection, payload, () => { return true })  
       },
       sendUserGroup(userGroup) {
         let collection = '620e6a9c6eaf0b45fd76'
@@ -224,7 +224,7 @@ export default {
                     created_at: Date.now(),
                     annotator_id: this.chromeUserId
 				  }
-        this.$emit('api', collection, payload)     
+        this.$emit('api', collection, payload,  () => { return true })    
       },
       sendMetadata(story){
           let collection = '61f91407e6be2fb18ab1'
