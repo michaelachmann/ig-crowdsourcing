@@ -4,7 +4,8 @@ Willkommen beim Instagram Lab. Diese Seite beschreibt ein Forschungsprojekt zur 
 Normalerweise sind Posts auf Social Media Plattformen wie Facebook oder Twitter für immer online. Stories sind anders: Sie laufen nach 24 Stunden ab. Das erschwert die Analyse, da die Inhalte nur in diesem Zeitraum gesammelt werden können. Außerdem wirft die Sammlung von Stories ethische Fragen auf: Sollten Forschende Stories speicher, obwohl die Urheber doch annehmen, dass sie nach 24 Stunden ablaufen? Sollten Forschende die Medien der Nutzer speichern, die ihre Stories nur auf privaten Profilen mit ihren Freund\*innen teilen? Sicherlich nicht, zumindest nicht ohne Einverständnis! Deshalb unser Crowdsourcing-Ansatz: Du kannst uns dabei helfen einen tieferen Einblick in den Long-Tail der Stories zu erhalten, während wir die Privatsphäre der Nutzer\*innen und den Datenschutz wahren!
 
 ### Das Projekt Unterstützen
-Du kannst uns bei der Sammlung unterstützen, indem du dir unsere [IG-Crowdsourcing-Plattform], eine Chrome-Extension, installierst. 
+Du kannst uns bei der Sammlung unterstützen, indem du dir unsere [IG-Crowdsourcing-Plattform](https://github.com/michaelachmann/ig-crowdsourcing), eine Chrome-Extension, installierst. 
+
 ![Screenshot](https://github.com/michaelachmann/ig-crowdsourcing/raw/master/screenshot.png)
 
 ### Chrome-Extension Installieren
@@ -27,7 +28,7 @@ Du solltest nun in der linken oberen Ecke einen Button *Crowdsourcing Plattform 
 ![Extension Öffnen](https://github.com/michaelachmann/ig-crowdsourcing/raw/master/docs/images/button.png)
 
 ### Ich habe die Extension installiert, und nun?
-Nun bist du bereit Stories zu kodieren und transkribieren. Wähle dafür alle passenden Codes, die zur Story auf der linken Seite passen. Wähle außerdem aus, zu welche Nutzergruppe du der Autor\*in der Story zuschreiben würdest. Falls in der Story Texte vorkommen würden wir uns freuen, falls du diese im Feld *Transkription* abtippen könntest. Wenn du fertig bist klicke rechts unten auf *Eingaben Speichern*. Mit dem Klick rechts unten auf *Story Überspringen* kannst du die aktuelle Story auch überspringen. 
+Nun bist du bereit Stories zu kodieren und transkribieren. Wähle dafür alle passenden Codes, die zur Story auf der linken Seite passen. Wähle außerdem aus, zu welche Nutzergruppe du der Autor\*in der Story zuschreiben würdest. Falls in der Story Texte vorkommen würden wir uns freuen, falls du diese im Feld *Transkription* abtippen könntest. Wenn du fertig bist klicke rechts unten auf *Eingaben Speichern*. Mit dem Klick rechts unten auf *Story Überspringen* kannst du die aktuelle Story auch überspringen. **Aktuell interessieren uns vor allem die Stories von privaten Profile**.
 
 Sobald du einmal die Eingaben gespeichert hast wird dir die Story nicht mehr angezeigt, übersprungene Stories werden nach Neuladen der Seite wieder angezeigt. 
 
