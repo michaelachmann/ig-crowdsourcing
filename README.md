@@ -2,7 +2,7 @@
 
 Chrome Extension to collect an Instagram Story corpus. Currently under developement. More Information: https://ig-lab.net
 
-<img src="/Users/michael/Dev/instagram-story-annotator/screenshot.png" style="zoom:67%;" />
+<img src="screenshot.png" style="zoom:67%;" />
 
 ## Getting Started
 Download the [latest release](https://github.com/michaelachmann/instagram-story-annotator/releases), unzip it and [add it to chrome](https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked). 
@@ -13,9 +13,9 @@ Download the [latest release](https://github.com/michaelachmann/instagram-story-
 
 3. Turn the developement mode in chrome on:
 
-   ![](/Users/michael/Dev/instagram-story-annotator/docs/images/dev_mode.png)
+   ![](docs/images/dev_mode.png)
 
-4. Load the folder `extension` which you extracted in step one from the zip-Archive using the button "Load Unpacked":![](/Users/michael/Dev/instagram-story-annotator/docs/images/load_unpacked.png)
+4. Load the folder `extension` which you extracted in step one from the zip-Archive using the button "Load Unpacked":![](docs/images/load_unpacked.png)
 
 ## Development
 1. Clone the repository
@@ -29,7 +29,7 @@ Download the [latest release](https://github.com/michaelachmann/instagram-story-
 `yarn install`
 
 4. Run Dev-Server
-  `yarn serve`
+    `yarn serve`
 
 5. Follow the steps above to add the extension to your browser.
 
