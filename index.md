@@ -5,7 +5,7 @@ Normalerweise sind Posts auf Social Media Plattformen wie Facebook oder Twitter 
 
 ### Das Projekt Unterstützen
 Du kannst uns bei der Sammlung unterstützen, indem du dir unsere [IG-Crowdsourcing-Plattform], eine Chrome-Extension, installierst. 
-![Screenshot](https://github.com/michaelachmann/ig-crowdsourcing/blob/master/screenshot.png)
+![Screenshot](https://github.com/michaelachmann/ig-crowdsourcing/blob/raw/master/screenshot.png)
 
 ### Chrome-Extension Installieren
 [Lade die aktuellste Version von ig-crowdsource herunter](https://github.com/michaelachmann/ig-crowdsourcing/releases) und folgen diesen Schritten:
@@ -15,16 +15,16 @@ Du kannst uns bei der Sammlung unterstützen, indem du dir unsere [IG-Crowdsourc
 
 3. Schalte den Entwicklermodus ein.
 
-   ![Entwicklermodus Einschalten](https://github.com/michaelachmann/ig-crowdsourcing/blob/master/docs/images/dev_mode_de.png)
+   ![Entwicklermodus Einschalten](https://github.com/michaelachmann/ig-crowdsourcing/blob/raw/master/docs/images/dev_mode_de.png)
 
 4. Laden den Ordner `extension`, den du im ersten Schritt aus der ZIP-Datei entpackt hast, mit dem Button "Entpackte Erweiterung Laden":
-   ![Entpacke Erweiterung Laden](https://github.com/michaelachmann/ig-crowdsourcing/blob/master/docs/images/load_unpacked.png)
+   ![Entpacke Erweiterung Laden](https://github.com/michaelachmann/ig-crowdsourcing/blob/raw/master/docs/images/load_unpacked.png)
    
 ### IG-Crowdsourcing-Plattform Starten
 Zum Starten der Extension öffne die [Instagram-Startseite](https://instagram.com). Solltest du noch nicht eingeloggt sein logge dich jetzt mit deinen Informationen ein. **Ohne erfolgreichen Login funktioniert die Extension nicht!** Zu keiner Zeit werden deine Login-Informationen an uns übertragen.
 
 Du solltest nun in der linken oberen Ecke einen Button *Crowdsourcing Plattform Öffnen* finden. Klicke darauf uns es öffnet sich eine neue Seite. Zuerst musst du den Datenschutzbedingungen zustimmen, dann kannst du los legen!
-![Extension Öffnen](https://github.com/michaelachmann/ig-crowdsourcing/blob/master/docs/images/button.png)
+![Extension Öffnen](https://github.com/michaelachmann/ig-crowdsourcing/blob/raw/master/docs/images/button.png)
 
 ### Ich habe die Extension installiert, und nun?
 Nun bist du bereit Stories zu kodieren und transkribieren. Wähle dafür alle passenden Codes, die zur Story auf der linken Seite passen. Wähle außerdem aus, zu welche Nutzergruppe du der Autor\*in der Story zuschreiben würdest. Falls in der Story Texte vorkommen würden wir uns freuen, falls du diese im Feld *Transkription* abtippen könntest. Wenn du fertig bist klicke rechts unten auf *Eingaben Speichern*. Mit dem Klick rechts unten auf *Story Überspringen* kannst du die aktuelle Story auch überspringen. 
