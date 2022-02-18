@@ -4,8 +4,8 @@
                     <CodingForm :codes="codes" />
                     <div class="flex flex-row sm:flex-wrap">
                         <ContextOfUseForm :contextOfUse="contextOfUse" />
-                        <UserGroupForm :userGroup="userGroup" />
-                        <!--<TranscriptionForm :transcription="transcription" />-->
+                        <UserGroupForm v-model="userGroup" />
+                        <TranscriptionForm v-model="transcription" />
                     </div>
             </div>
         <div class="flex mt-2 justify-between flex-row-reverse">
@@ -13,7 +13,7 @@
               <button class="block w-1/2 px-3 py-2 mx-1 rounded text-center text-xl bg-blue-500 font-medium text-white leading-5 hover:bg-blue-600 md:mx-2 md:w-auto" @click="saveData()">Eingaben Speichern</button>
             </div>
             <div class="">
-              <button :disabled="noStoriesLeft" class="block w-1/2 px-3 py-2 mx-1 rounded text-center text-xl bg-gray-500 font-medium text-white leading-5 hover:bg-blue-600 md:mx-2 md:w-auto" @click="$emit('getNextStory')">Story &Uuml;berspringen</button>
+              <button :disabled="noStoriesLeft" class="block w-1/2 px-3 py-2 mx-1 rounded text-center text-xl bg-gray-500 font-medium text-white leading-5 hover:bg-blue-600 md:mx-2 md:w-auto" @click="nextStory()">Story &Uuml;berspringen</button>
             </div>
           </div>
       </div>
@@ -23,7 +23,7 @@
 import moment from 'moment';
 import CodingForm from './CodingForm.vue'
 import ContextOfUseForm from './ContextOfUseForm.vue'
-//import TranscriptionForm from './TranscriptionForm.vue'
+import TranscriptionForm from './TranscriptionForm.vue'
 import UserGroupForm from './UserGroupForm.vue'
 
 moment.locale('de');
@@ -34,11 +34,13 @@ export default {
       CodingForm,
       ContextOfUseForm,
       UserGroupForm,
+      TranscriptionForm
   },
   data() {
       return {
-    transcription: '',
-    userGroup: '',
+    transcription : '',
+    userGroup: 'None',
+    lastOwner: '',
     codes: {
           portrait: {
               selfie: false,
@@ -72,7 +74,7 @@ export default {
               drink: false,
           },
           other: {
-              animal: false,
+              animals: false,
               open: ''
           }
       },
@@ -101,7 +103,6 @@ export default {
     },
   },
   mounted() {
-      console.log(this.chromeUserId)
   },
   computed: {
       taken_at: function() {
@@ -116,9 +117,6 @@ export default {
   watch: {
       story() {
           this.clearForms()
-      },
-      transcription() {
-          console.log(this.transcription)
       }
   },
   methods: {
@@ -143,7 +141,7 @@ export default {
         this.codes.celebration.special = false
         this.codes.food.food = false
         this.codes.food.drink = false
-        this.codes.other.animal = false
+        this.codes.other.animals = false
         this.codes.other.open= ''
         this.contextOfUse.special_event = false
         this.contextOfUse.daily_life = false
@@ -152,9 +150,21 @@ export default {
         this.contextOfUse.self_display = false
         this.contextOfUse.aphorism = false
         this.contextOfUse.other = ''
-        this.userGroup = ''
+
+        if(this.lastOwner != this.story.owner.username){
+          this.userGroup = "None"
+        }
+
+      },
+      nextStory(){
+        this.lastOwner = this.story.owner.username
+        this.clearForms()
+        this.$emit('getNextStory')
       },
       saveData(){
+        
+        this.lastOwner = this.story.owner.username
+
         // Saving Codes 
         this.sendCodes(this.codes)
 

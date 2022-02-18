@@ -49,14 +49,14 @@
                 </div>
 
                 <div class="form-check">
-                <input type="checkbox" v-model="codes.composition.sticker" id="code-sticker">
+                <input type="checkbox" v-model="codes.composition.stickers" id="code-sticker">
                 <label for="code-sticker">
                     Interactive Sticker
                 </label>
                 </div>
 
                 <div class="form-check">
-                <input type="checkbox" v-model="codes.composition.meme" id="code-meme">
+                <input type="checkbox" v-model="codes.composition.memes" id="code-meme">
                 <label for="code-meme">
                     Memes
                 </label>
@@ -97,7 +97,7 @@
 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.materiality.books" id="code-books">
-                <label for="code-objects">
+                <label for="code-books">
                     B&uuml;cher
                 </label>
                 </div>
@@ -109,14 +109,14 @@
                 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.setting.city" id="code-city">
-                <label for="code-objects">
+                <label for="code-city">
                     Stadt / Urban
                 </label>
                 </div>
 
                 <div class="form-check">
                 <input type="checkbox" v-model="codes.setting.nature" id="code-nature">
-                <label for="code-bodies">
+                <label for="code-nature">
                     Natur
                 </label>
                 </div>

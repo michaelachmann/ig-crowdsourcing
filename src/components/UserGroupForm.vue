@@ -9,26 +9,31 @@
     <div class="m-4">
 
                 <div class="form-check">
-                <input type="radio" id="influencer" value="Influencer" v-model="userGroup">
+                <input type="radio" id="influencer" value="Influencer" v-model="modelValue" @input="$emit('update:modelValue', $event.target.value)">
                 <label class="pl-1" for="influencer">Influencer*in</label>
                 </div>
 
                 <div class="form-check">
-                <input type="radio" id="politician" value="Politician" v-model="userGroup">
+                <input type="radio" id="politician" value="Politician" v-model="modelValue"  @input="$emit('update:modelValue', $event.target.value)">
                 <label class="pl-1" for="politician">Politiker*in (oder Partei)</label>
                 </div>
 
                 <div class="form-check">
-                <input type="radio" id="private" value="Private" v-model="userGroup">
+                <input type="radio" id="private" value="Private" v-model="modelValue"  @input="$emit('update:modelValue', $event.target.value)">
                 <label class="pl-1" for="private">Privatperson</label>
                 </div>
 
                 <div class="form-check">
-                <input type="radio" id="org" value="Org" v-model="userGroup">
+                <input type="radio" id="org" value="Org"
+                    v-model="modelValue"
+                    @input="$emit('update:modelValue', $event.target.value)">
                 <label class="pl-1" for="org">Firma / Institution</label>
                 </div>
-              
 
+                <div class="form-check invisible">
+                <input type="radio" id="none" value="None" v-model="modelValue"  @input="$emit('update:modelValue', $event.target.value)"> 
+                <label class="pl-1" for="none">Keine</label>
+                </div>
 
         </div>
       </div>
@@ -43,9 +48,8 @@
 
 export default {
   name: 'UserGroupForm',
-  props: [
-    'userGroup'
-  ]
+  props: ['modelValue'],
+  emits: ['update:modelValue']
 }
 </script>
 

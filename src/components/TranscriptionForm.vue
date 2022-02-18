@@ -6,7 +6,10 @@
         <hr />
     </div>
       <div class="text-base mt-4 h-full w-full">
-        <textarea v-model="transcription" class="p-1 resize-none w-full h-full border rounded"></textarea>
+        <textarea 
+            :value="modelValue"
+            @input="$emit('update:modelValue', $event.target.value)"
+            class="p-1 resize-none w-full h-full border rounded"></textarea>
       </div>
       <div>
 
@@ -20,9 +23,8 @@
 
 export default {
   name: 'TranscriptionForm',
-  props: {
-    'transcription': String
-  }
+  props: ['modelValue'],
+  emits: ['update:modelValue']
 }
 </script>
 

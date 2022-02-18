@@ -8,6 +8,8 @@
 
     <div v-show="requestRunning" class="w-full h-5/6 flex flex-col bg-white items-center">
       <span class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status"></span>
+      <br />
+      <p>Stories laden nicht? &Uuml;berpr&uuml;fe ob du bei Instagram eingeloggt bist!</p>
     </div>
     <div v-if="noStoriesLeft" class="w-full h-5/6 flex flex-col bg-white items-center">
       <div class="text-2xl"> 
@@ -72,13 +74,10 @@ export default {
     }
   },
   mounted() {
-    console.log(this.chromeUserId)
     this.getUserIds()
 
     chrome.storage.sync.get('annotatedIDs', function(result) {
         this.annotatedIDs = result.annotatedIDs
-        //this.annotatedIDs = {}
-        console.log('Value currently is ' + JSON.stringify(result.annotatedIDs));
       }.bind(this));
 
     //Vibrant.from('https://placekitten.com/200/287').getPalette()
@@ -145,7 +144,6 @@ export default {
     },
     getUserStories(userId) {
       this.getTab(() => {
-        console.log(userId)
         chrome.tabs.sendMessage(this.tab.id, {type: 'userStories', userId: userId}, function(response) {
                     this.currentStories = response
                     this.currentStoryPointer = 0
@@ -166,9 +164,7 @@ export default {
     getImage(url){
       this.getTab(() => {
         chrome.tabs.sendMessage(this.tab.id, {type: 'image', url: url}, function(response) {
-            console.log(url)
             this.currentImage = response
-            console.log(this.currentImage)
             }.bind(this))
         })
     },
@@ -183,7 +179,6 @@ export default {
     },
     postToApi(collection, payload){
       this.getTab(() => {
-        console.log(payload)
         chrome.tabs.sendMessage(this.tab.id, {type: 'appwrite.createDocument', payload, collection}, function(response) {}.bind(this)) 
       })
     }
