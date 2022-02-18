@@ -1,37 +1,43 @@
-## Welcome to GitHub Pages
+## Instagram Lab
+Willkommen beim Instagram Lab. Diese Seite beschreibt ein Forschungsprojekt zur Analyse von Instagram Storie am Lehrstuhl für Medieninformatik der Universität Regensburg. Aktuell sammeln wir Story-Korpora verschiedener Nutzer\*innengruppen: Politischer Akteure, Influencer\*innen und Privat-Personen. 
 
-You can use the [editor on GitHub](https://github.com/michaelachmann/ig-crowdsourcing/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Normalerweise sind Posts auf Social Media Plattformen wie Facebook oder Twitter für immer online. Stories sind anders: Sie laufen nach 24 Stunden ab. Das erschwert die Analyse, da die Inhalte nur in diesem Zeitraum gesammelt werden können. Außerdem wirft die Sammlung von Stories ethische Fragen auf: Sollten Forschende Stories speicher, obwohl die Urheber doch annehmen, dass sie nach 24 Stunden ablaufen? Sollten Forschende die Medien der Nutzer speichern, die ihre Stories nur auf privaten Profilen mit ihren Freund\*innen teilen? Sicherlich nicht, zumindest nicht ohne Einverständnis! Deshalb unser Crowdsourcing-Ansatz: Du kannst uns dabei helfen einen tieferen Einblick in den Long-Tail der Stories zu erhalten, während wir die Privatsphäre der Nutzer\*innen und den Datenschutz wahren!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Das Projekt Unterstützen
+Du kannst uns bei der Sammlung unterstützen, indem du dir unsere [IG-Crowdsourcing-Plattform], eine Chrome-Extension, installierst. 
+![Screenshot](https://github.com/michaelachmann/ig-crowdsourcing/blob/master/screenshot.png)
 
-### Markdown
+### Chrome-Extension Installieren
+[Lade die aktuellste Version von ig-crowdsource herunter](https://github.com/michaelachmann/ig-crowdsourcing/releases) und folgen diesen Schritten:
+1. Extrahiere den Ordner aus dem ZIP-Archiv
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+2. Gehe in deinem Chrome Browser zur Adresse `chrome://extensions/`.
 
-```markdown
-Syntax highlighted code block
+3. Schalte den Entwicklermodus ein.
 
-# Header 1
-## Header 2
-### Header 3
+   ![Entwicklermodus Einschalten](https://github.com/michaelachmann/ig-crowdsourcing/blob/master/docs/images/dev_mode_de.png)
 
-- Bulleted
-- List
+4. Laden den Ordner `extension`, den du im ersten Schritt aus der ZIP-Datei entpackt hast, mit dem Button "Entpackte Erweiterung Laden":
+   ![Entpacke Erweiterung Laden](https://github.com/michaelachmann/ig-crowdsourcing/blob/master/docs/images/load_unpacked.png)
+   
+### IG-Crowdsourcing-Plattform Starten
+Zum Starten der Extension öffne die [Instagram-Startseite](https://instagram.com). Solltest du noch nicht eingeloggt sein logge dich jetzt mit deinen Informationen ein. **Ohne erfolgreichen Login funktioniert die Extension nicht!** Zu keiner Zeit werden deine Login-Informationen an uns übertragen.
 
-1. Numbered
-2. List
+Du solltest nun in der linken oberen Ecke einen Button *Crowdsourcing Plattform Öffnen* finden. Klicke darauf uns es öffnet sich eine neue Seite. Zuerst musst du den Datenschutzbedingungen zustimmen, dann kannst du los legen!
+![Extension Öffnen](https://github.com/michaelachmann/ig-crowdsourcing/blob/master/docs/images/button.png)
 
-**Bold** and _Italic_ and `Code` text
+### Ich habe die Extension installiert, und nun?
+Nun bist du bereit Stories zu kodieren und transkribieren. Wähle dafür alle passenden Codes, die zur Story auf der linken Seite passen. Wähle außerdem aus, zu welche Nutzergruppe du der Autor\*in der Story zuschreiben würdest. Falls in der Story Texte vorkommen würden wir uns freuen, falls du diese im Feld *Transkription* abtippen könntest. Wenn du fertig bist klicke rechts unten auf *Eingaben Speichern*. Mit dem Klick rechts unten auf *Story Überspringen* kannst du die aktuelle Story auch überspringen. 
 
-[Link](url) and ![Image](src)
-```
+Sobald du einmal die Eingaben gespeichert hast wird dir die Story nicht mehr angezeigt, übersprungene Stories werden nach Neuladen der Seite wieder angezeigt. 
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Welche Daten werden gesammelt?
+Wir bitten dich um die Mithilfe bei der Kodierung nach Kategorien aus der Literatur [(Bainotti 2021)](http://dx.doi.org/10.1177/1461444820960071). Außerdem kannst du uns helfen indem du Texte, die in die Stories eingebettet sind, transkribierst, das heißt abschreibst. Mit Klick auf "Speichern" werden die Kodierungen und Transkriptionen auf unseren Server übertragen. Außerdem übermittelt dein Browser Meta-Daten zur kodierten Story und eine zufällige, anonyme Nutzerkennung, die beim ersten Start der Extension generiert wird.
 
-### Jekyll Themes
+Wir sammeln keine Informationen von deinem Instagram-Profil. Metadaten der Stories beinhalten Informationen über die genutzten Sticker, die ID der Story und des Erstellers, sowie Erstellungszeitpunkt und Ablauf. Zu keiner Zeit werden Bilder an unseren Server übertragen, auch musst du zu keiner Zeit dein Passwort an uns übermitteln. Die Software läuft auf deinem Computer in deinem Chrome-Browser. Du musst während der Nutzung immer mindestens ein Instagram-Tab offen halten, bei dem du mit einem Profil angemeldet bist.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/michaelachmann/ig-crowdsourcing/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Aktuelle Informationen zum Projekt
+Die Extension und Arbeit am Projekt haben gerade erst begonnen. Diese Website wurde zur Begleitung des Posters *Studying the ephemeral, cultures of digital oblivion* auf der DHd 2022 erstellt. Weitere Publikationen und Fortschritte werden in Zukunft hier dokumentiert.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Impressum
+Diese Website und das Projekt werden von Michael Achmann betreut. Alle Kontaktinformationen findest du unter [https://go.ur.de/michael-achmann](https://go.ur.de/michael-achmann). [Weitere Informationen zum Datenschutz hier](https://md.digitalhumanities.io/s/yzYezHRKx).
