@@ -1,0 +1,3 @@
+[submodule "instagram-story-annotator-extension"]
+	path = extension
+	url = https://github.com/michaelachmann/instagram-story-annotator-extension
