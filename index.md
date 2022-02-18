@@ -19,7 +19,7 @@ Du kannst uns bei der Sammlung unterstützen, indem du dir unsere [IG-Crowdsourc
    ![Entwicklermodus Einschalten](https://github.com/michaelachmann/ig-crowdsourcing/raw/master/docs/images/dev_mode_de.png)
 
 4. Laden den Ordner `extension`, den du im ersten Schritt aus der ZIP-Datei entpackt hast, mit dem Button "Entpackte Erweiterung Laden":
-   ![Entpacke Erweiterung Laden](https://github.com/michaelachmann/ig-crowdsourcing/raw/master/docs/images/load_unpacked.png)
+   ![Entpacke Erweiterung Laden](https://github.com/michaelachmann/ig-crowdsourcing/raw/master/docs/images/load_unpacked_de.png)
    
 ### IG-Crowdsourcing-Plattform Starten
 Zum Starten der Extension öffne die [Instagram-Startseite](https://instagram.com). Solltest du noch nicht eingeloggt sein logge dich jetzt mit deinen Informationen ein. **Ohne erfolgreichen Login funktioniert die Extension nicht!** Zu keiner Zeit werden deine Login-Informationen an uns übertragen.
