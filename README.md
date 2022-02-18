@@ -1,4 +1,4 @@
-# instagram-story-annotator
+# ig-crowdsourcing
 
 Chrome Extension to collect an Instagram Story corpus. Currently under developement. More Information: https://ig-lab.net
 
@@ -19,7 +19,8 @@ Download the [latest release](https://github.com/michaelachmann/instagram-story-
 
 ## Development
 1. Clone the repository
-`git clone instagram-story-annotator`
+
+  `git clone instagram-story-annotator`
 
 2. Init the submodule (the actual extension)
 
