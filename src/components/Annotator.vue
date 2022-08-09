@@ -25,7 +25,7 @@
 
           <div class="flex">
             <div class="py-2">
-                  <img class="w-auto h-auto rounded" :src="currentImage" alt="Current Story for annotation">
+                  <img class="w-auto h-auto rounded" :src="currentImage" id="annotation_image" alt="Current Story for annotation">
             </div>
           </div>
 
@@ -36,6 +36,9 @@
         
           <Story v-on:api="postToApi" v-if="!requestRunning" :story="currentStory" :noStoriesLeft="noStoriesLeft" v-on:finishedAnnotation="finishedAnnotation" v-on:getNextStory="getNextStory" :chromeUserId="chromeUserId"/>
       
+              <Button color="default">Default</Button>
+
+
         </div>
     </div>
   </div>
@@ -46,13 +49,19 @@
 <script>
 import Story from './Story.vue'
 import StoryMetadata from './StoryMetadata.vue'
+import { Button } from 'flowbite-vue'
+
 var Vibrant = require('node-vibrant')
+
+import { Annotorious } from '@recogito/annotorious';
+import '@recogito/annotorious/dist/annotorious.min.css';
 
 export default {
   name: 'Annotator',
   components: {
     Story,
     StoryMetadata,
+    Button,
   },
   props: {
     chromeUserId: String,
@@ -70,7 +79,9 @@ export default {
       currentImage: "",
       tabOpen: false,
       tab: null,
-      annotatedIDs: {}
+      annotatedIDs: {},
+      anno: null,
+      imageAnnotations: [],
     }
   },
   mounted() {
@@ -185,9 +196,32 @@ export default {
       this.getTab(() => {
         chrome.tabs.sendMessage(this.tab.id, {type: 'appwrite.createDocument', payload, collection}, function(response) {}.bind(this)) 
       })
+    },
+    craeteOrUpdateAnnotation(annotation){
+            console.log(annotation)
+
+      //this.postToApi('annotations', annotation)
+      this.imageAnnotations.push(annotation)
+    },
+    deleteAnnotation(annotation){
+      //this.postToApi('annotations', annotation)
     }
   },
-  computed: {
+  watch: {
+    currentImage: function (val, oldVal) {
+      console.log(this.imageAnnotations)
+      if(this.anno){
+        this.anno.destroy()
+      }
+    
+      this.anno = new Annotorious({
+        image: document.getElementById("annotation_image"),
+      });
+
+      this.anno.on('createAnnotation', this.craeteOrUpdateAnnotation);
+      this.anno.on('updateAnnotation', this.craeteOrUpdateAnnotation);
+      this.anno.on('deleteAnnotation', this.deleteAnnotation); 
+    }   
   }
 }
 </script>
